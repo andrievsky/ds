@@ -1,2 +1,2 @@
 # ds
-Nice Go Data Structures
+If you know - you know
