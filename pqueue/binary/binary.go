@@ -66,7 +66,7 @@ func (t *PriorityQueue) Empty() bool {
 
 func up(queue []*Node, j int) {
 	for {
-		i := (j - 1) / 2 // parent
+		i := (j - 1) / 2
 		if i == j || queue[j].priority >= queue[i].priority {
 			break
 		}
@@ -81,12 +81,12 @@ func down(queue []*Node, i0 int) bool {
 	i := i0
 	for {
 		j1 := 2*i + 1
-		if j1 >= len(queue) || j1 < 0 { // j1 < 0 after int overflow
+		if j1 >= len(queue) || j1 < 0 {
 			break
 		}
-		j := j1 // left child
+		j := j1
 		if j2 := j1 + 1; j2 < len(queue) && queue[j2].priority < queue[j1].priority {
-			j = j2 // = 2*i + 2  // right child
+			j = j2
 		}
 		if queue[j].priority >= queue[i].priority {
 			break

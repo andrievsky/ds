@@ -6,6 +6,5 @@ type Heap[T cmp.Ordered] interface {
 	Push(value T)
 	Peek() T
 	Pop() T
-	IsEmpty() bool
-	Size() int
+	Empty() bool
 }

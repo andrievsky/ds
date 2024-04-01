@@ -1,7 +1,5 @@
 package pairing
 
-// https://leetcode.com/problems/design-a-food-rating-system/description/
-
 import (
 	"cmp"
 	"fmt"
