@@ -70,14 +70,14 @@ func (t TestCase) String() string {
 func Test(t *testing.T) {
 	for _, test := range cases {
 		t.Run(test.String(), func(t *testing.T) {
-			pq := New()
+			pq := New[string, int](func(a, b int) bool { return a < b })
 			for _, op := range test.operations {
 				switch op[0] {
 				case "push":
 					value, _ := strconv.Atoi(op[2])
 					pq.Push(op[1], value)
 				case "pop":
-					actual := pq.Pop()
+					actual, _ := pq.Pop()
 					if actual != op[1] {
 						t.Errorf("got %v\nwant %v", actual, op[1])
 					}

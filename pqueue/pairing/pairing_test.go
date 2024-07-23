@@ -81,7 +81,6 @@ func Test(t *testing.T) {
 				case "update":
 					value, _ := strconv.Atoi(op[2])
 					pq.Update(op[1], value)
-					fmt.Println(pq.Pretty())
 				case "empty":
 					actual := pq.Empty()
 					if actual != true {
