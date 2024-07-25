@@ -61,6 +61,6 @@ func (t *Deque[T]) PopBack() T {
 	return value
 }
 
-func (t *Deque[T]) IsEmpty() bool {
+func (t *Deque[T]) Empty() bool {
 	return t.head == nil
 }

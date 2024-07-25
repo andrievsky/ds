@@ -22,7 +22,7 @@ func Meld[Elem cmp.Ordered](tree1 *PairingTree[Elem], tree2 *PairingTree[Elem]) 
 	return tree1
 }
 
-func IsEmpty[Elem cmp.Ordered](tree *PairingTree[Elem]) bool {
+func Empty[Elem cmp.Ordered](tree *PairingTree[Elem]) bool {
 	return tree == nil
 }
 
@@ -40,7 +40,7 @@ type PairingHeap[Elem cmp.Ordered] struct {
 	root *PairingTree[Elem]
 }
 
-func NewMaxHeap[Elem cmp.Ordered]() *PairingHeap[Elem] {
+func New[Elem cmp.Ordered]() *PairingHeap[Elem] {
 	return &PairingHeap[Elem]{nil}
 }
 
@@ -58,6 +58,6 @@ func (heap *PairingHeap[Elem]) Pop() Elem {
 	return e
 }
 
-func (heap *PairingHeap[Elem]) IsEmpty() bool {
+func (heap *PairingHeap[Elem]) Empty() bool {
 	return heap.root == nil
 }
